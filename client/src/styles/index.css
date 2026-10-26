@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-page: #FAF8F4;
+    --surface-card: #FFFFFF;
+    --primary-main: #1F6F5B;
+    --accent-main: #F5A524;
+    --border-color: rgba(31, 111, 91, 0.12);
+  }
+
+  .dark {
+    --bg-page: #0F1A17;
+    --surface-card: #162521;
+    --primary-main: #34A085;
+    --accent-main: #F5A524;
+    --border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  body {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .dark .glass-panel {
+    background: rgba(22, 37, 33, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-header {
+    background: rgba(250, 248, 244, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .dark .glass-header {
+    background: rgba(15, 26, 23, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(31, 111, 91, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(31, 111, 91, 0.4);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* cmdk palette styling */
+[cmdk-root] {
+  max-width: 640px;
+  width: 100%;
+}
+
+[cmdk-input] {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+[cmdk-item] {
+  content-visibility: auto;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  transition: all 120ms ease;
+}
+
+[cmdk-item][data-selected="true"] {
+  background: rgba(31, 111, 91, 0.1);
+  color: #1F6F5B;
+}
+
+.dark [cmdk-item][data-selected="true"] {
+  background: rgba(52, 160, 133, 0.2);
+  color: #55DCB7;
+}
